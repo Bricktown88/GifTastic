@@ -28,31 +28,57 @@ function renderButtons() {
         method: "GET"
       })
     
-        .then(function(response) {
-          var results = response.data;
-          console.log(results);
-    
-          for (var i = 0; i < results.length; i++) {
-    
-            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-              var gifDiv = $("<div class='item'>");
-              var rating = results[i].rating;
-              var p = $("<p>").text("Rating: " + rating);
-              var buttonImage = $("<img>");
-    
-              buttonImage.attr("src", results[i].images.downsized_still.url);
-    
-              gifDiv.append(p);
-              gifDiv.append(buttonImage);
-    
-              $("#gif-div").prepend(gifDiv);
-            }
+      .then(function(response) {
+        var results = response.data;
+        console.log(results);
+  
+        for (var i = 0; i < results.length; i++) {
+  
+          if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+            var gifDiv = $("<div class='item'>");
+            var rating = results[i].rating;
+            var p = $("<p>").text("Rating: " + rating);
+            var buttonImage = $("<img>");
+  
+            buttonImage.attr("src", results[i].images.downsized_still.url);
+            buttonImage.attr("data-still", results[i].images.downsized_still.url);
+            buttonImage.attr("data-animate", results[i].images.downsized.url);
+            buttonImage.attr("data-state", "still");
+  
+            gifDiv.append(p);
+            gifDiv.append(buttonImage);
+  
+            $("#gif-div").prepend(gifDiv);
           }
-        });
-    });
+          
+        }
+        
+      });
+      
+      
+  });
+  
 }
+$('body').on('click','img',function() {
 
+  var currentState = $(this).attr("data-state");
+  if (currentState == "still") {
+    $(this).attr("src", $(this).data("animate"));
+    $(this).attr("data-state", "animate");
+  } else {
+    $(this).attr("src", $(this).data("still"));
+    $(this).attr("data-state", "still");
+  }
+})
 
+$("#add-topic").on("click", function(event) {
+  event.preventDefault();
+  
+  var topic = $("#topic-input").val().trim();
+  topics.push(topic);
+
+  renderButtons();
+});
 
 renderButtons();
 
