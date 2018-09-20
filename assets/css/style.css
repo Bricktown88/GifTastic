@@ -1,0 +1,55 @@
+.jumbotron {
+    background-color: black;
+}
+
+body {
+    background-color: #00cc99;
+
+}
+.display-4 {
+    color: #ff00ff;
+}
+
+.lead {
+    color: #9900cc;
+}
+
+#topic-form {
+    color: #00cc99;
+}
+
+#topic-input {
+    background-color: #ff5050;
+    color: black;
+    border-color: black;
+}
+
+.help {
+    color: #ff5050;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#add-topic {
+    background-color: #33ccff;
+    color: #ff5050;
+    border-color: black;
+}
+
+.topic {
+    margin: 5px;
+}
+
+#footer {
+    background-color: black;
+}
+
+p {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#gif-div {
+    float: left;
+}
+

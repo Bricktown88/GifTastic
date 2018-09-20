@@ -11,6 +11,7 @@ function renderButtons() {
 
     var a = $("<button>");
     a.addClass("topic");
+    a.addClass("btn btn-warning");
     a.attr("data-name", topics[i]);
     a.text(topics[i]);
     $("#buttons-div").append(a);
@@ -40,9 +41,9 @@ function renderButtons() {
             var p = $("<p>").text("Rating: " + rating);
             var buttonImage = $("<img>");
   
-            buttonImage.attr("src", results[i].images.downsized_still.url);
-            buttonImage.attr("data-still", results[i].images.downsized_still.url);
-            buttonImage.attr("data-animate", results[i].images.downsized.url);
+            buttonImage.attr("src", results[i].images.fixed_height_still.url);
+            buttonImage.attr("data-still", results[i].images.fixed_height_still.url);
+            buttonImage.attr("data-animate", results[i].images.fixed_height.url);
             buttonImage.attr("data-state", "still");
   
             gifDiv.append(p);
@@ -73,7 +74,7 @@ $('body').on('click','img',function() {
 
 $("#add-topic").on("click", function(event) {
   event.preventDefault();
-  
+
   var topic = $("#topic-input").val().trim();
   topics.push(topic);
 

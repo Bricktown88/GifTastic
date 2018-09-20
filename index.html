@@ -6,23 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Giphy API Tool</title>
 
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 </head>
 <body>
     
-    <div id="buttons-div">
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">GifTastic Giphy API !</h1>
+        <p class="lead">Click a button and see some GIFs</p>
+        <div id="buttons-div"></div>
+        <hr class="my-4">
+        <p class="lead">
+            <div class="input-group mb-3" id="topic-form">
+                <input type="text" class="form-control" id="topic-input" placeholder="Which topics are YOU interested in?">
+                <div class="input-group-append">
+                    <input class="btn btn-outline-secondary" role="button" id="add-topic" type="submit" value="Click to Add a New Topic">
+                </div>
+            </div>
+                <!-- <form id="topic-form">
+                        <label for="topic-input">What topics are YOU interested in?</label>
+                        <input type="text" id="topic-input"><br>
+                        <input class="btn btn-primary btn-lg" href="#" role="button" id="add-topic" type="submit" value="Add a New Topic">
+                </form> -->
+        </p>
+
     </div>
+    <!-- <div id="buttons-div"></div>
     <form id="topic-form">
             <label for="topic-input">What topics are you interested in?</label>
             <input type="text" id="topic-input"><br>
             <input id="add-topic" type="submit" value="Add a New Topic">
-          </form>
-    <div id="gif-div">
+    </form> -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <div id="gif-div"></div>
+            </div>
+        </div>
     </div>
-
+    
+    <footer>
+            <div id="footer" class="container text-center">
+                    <p class="help">With help from: <img src="assets/images/dev-logo-lg.gif"></p>
+            </div>
+        </footer>
 <script src="assets/javascript/app.js"></script>
 </body>
 </html>
