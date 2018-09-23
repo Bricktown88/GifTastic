@@ -53,3 +53,13 @@ p {
     float: left;
 }
 
+.card {
+    background-color: #00cc99;
+    margin-bottom: 10px;
+    border: solid black 2px;
+}
+
+.col {
+    float: left;
+}
+

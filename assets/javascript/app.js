@@ -36,10 +36,13 @@ function renderButtons() {
         for (var i = 0; i < results.length; i++) {
   
           if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-            var gifDiv = $("<div class='item'>");
+            var gifDiv = $("<div class='card' style='width: 18rem;'>");
             var rating = results[i].rating;
-            var p = $("<p>").text("Rating: " + rating);
-            var buttonImage = $("<img>");
+            var title = results[i].title;
+            var p = $("<p class='card-text'>").text("Rating: " + rating);
+            var p2 = $("<p class='card-title'>").text("Title: " + title);
+            
+            var buttonImage = $("<img class='card-img-top'>");
   
             buttonImage.attr("src", results[i].images.fixed_height_still.url);
             buttonImage.attr("data-still", results[i].images.fixed_height_still.url);
@@ -47,8 +50,10 @@ function renderButtons() {
             buttonImage.attr("data-state", "still");
   
             gifDiv.append(p);
+            gifDiv.append(p2);
             gifDiv.append(buttonImage);
-  
+            
+
             $("#gif-div").prepend(gifDiv);
           }
           
